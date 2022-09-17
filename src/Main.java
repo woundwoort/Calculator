@@ -18,7 +18,8 @@ public class Main {
                 input = input.trim();
 
                 String[] operands = input.split(" ", 3);
-                if (operands[2].length() > 2) {
+
+                if (!((operands[2].chars().allMatch(Character::isLetter))||operands[2].chars().allMatch(Character::isDigit))) {
                     throw new Exception("формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)");
                 }
                 if (operands[0].chars().allMatch(Character::isDigit) && operands[2].chars().allMatch(Character::isDigit) &&      // чек на числа

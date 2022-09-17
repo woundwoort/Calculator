@@ -19,20 +19,20 @@ enum RomanNumeral {
         this.score = score;
     }
 
-
-    int getScore() {
-        return score;
-    }
-
-    static  String intToRoman(int num) {
+    static String intToRoman(int num) {
         StringBuilder romanVal = new StringBuilder();
 
-        for(RomanNumeral rn :RomanNumeral.values()){
+        for (RomanNumeral rn : RomanNumeral.values()) {
 
-            while(num >= rn.getScore()){
+            while (num >= rn.getScore()) {
                 romanVal.append(rn.toString());
                 num = num - rn.getScore();
             }
         }
         return romanVal.toString();
-    }}
+    }
+
+    int getScore() {
+        return score;
+    }
+}
